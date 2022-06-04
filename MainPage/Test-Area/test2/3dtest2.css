@@ -9,42 +9,30 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.frame{
-    width: 100%;
-    height: 100vh;
-    border: solid lime thick;
-    position: relative;
-}
-
 .wrapper{
-    width: 1500px;
-    height: 700px;
+    width: 300px;
+    height: 300px;
     border: solid red medium;
+    margin: 300px auto;
     perspective: 700px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
 }
 
 .cube{
-    width: 1500px;
-    height: 700px;
+    width: 300px;
+    height: 300px;
     transform-style: preserve-3d;
-    transform: translateX(-50%) translateY(-50%) translateZ(150px) scale(1) rotateX(0deg) rotateY(0deg) translateZ(0px);
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    transform: translateZ(150px) scale(1) rotateX(0deg) rotateY(0deg) translateZ(0px);
+    position: relative;
 }
 
 .face{
     position: absolute;
-    font-size: 300px;
+    font-size: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1500px;
-    height: 1500px;
+    width: 300px;
+    height: 300px;
 }
 .Longfaces{
     position: absolute;
@@ -77,11 +65,17 @@ body{
 }
 .topside{
     background: yellowgreen;
-    transform: rotatex(90deg) translateZ(350px);
+    transform: rotatex(90deg) translateZ(150px);
 
 }
 .bottomside{
     background: orange;
-    transform: rotatex(-90deg) translateZ(350px);
+    transform: rotatex(-90deg) translateZ(450px);
 
 }
+
+
+
+
+
+
