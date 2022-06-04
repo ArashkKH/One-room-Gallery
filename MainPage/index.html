@@ -4,32 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Planet</title>
+    <title>One Room Gallery</title>
     <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-
-    </header>
-
     <main>
+        <!-- CONTROL BUTTONS -->
+        <input type="radio" class="control" id="begginingView" name="start" checked>
+        <input type="radio" class="control" id="defualtView" name="start">
+        <input type="checkbox" class="control" id="monoFocus" name="">
+        <input type="radio" class="control" id="" name="">
+        <input type="radio" class="control" id="" name="">
+        <input type="radio" class="control" id="" name="">
+        <input type="radio" class="control" id="" name="">
+        <input type="radio" class="control" id="" name="">
+        <input type="radio" class="control" id="" name="">
+        <input type="radio" class="control" id="" name="">
+        <!-- CONTROL BUTTONS -->
+
         <div class="frame">
+            <div class="display">
+                <div class="start">
+                    <label for="defualtView">Click To Start</label>
+                </div>
+                <div class="credits1"> 
+                    <p>An ArashKh Design</p>  
+                </div>
+                <div class="name">
+                    <p>One Room Gallery</p>
+                </div>
+            </div>
             <div class="wrapper">
                 <div class="cube">
-                    <div class="Longfaces backside">Back</div>
+                    <div class="Longfaces backside">
+                        <div class="pic">
+                            <label for="monoFocus">
+                                <figure>
+                                    <img src="assets/picFrame.png" alt="Frame">
+                                    <figure><img src="assets/monolisa.jpg" alt="Monolisa"></figure>
+                                </figure>
+                            </label>
+                        </div>
+                    </div>
                     <div class="Longfaces frontside">Front</div>
                     <div class="Longfaces leftside">Left</div>
                     <div class="Longfaces rightside">Right</div>
                     <div class="face topside">Top</div>
-                    <div class="face bottomside">Bottom</div>
+                    <div class="face bottomside"></div>
                 </div>
             </div>
         </div>
     </main>
-
-    <footer>
-
-    </footer>
 
 </body>
 </html>
