@@ -1,0 +1,16 @@
+.pic>figure {
+display: grid;
+grid-template-columns: repeat(10, 1fr);
+grid-template-rows: repeat(7, 1fr);
+grid-column-gap: 20px;
+grid-row-gap: 13px;
+}
+
+.backside>.pic>figure>img:nth-child() { grid-area: 1 / 1 / 4 / 6; }
+.backside>.pic>figure>img:nth-child() { grid-area: 1 / 7 / 5 / 9; }
+.backside>.pic>figure>img:nth-child() { grid-area: 1 / 9 / 5 / 11; }
+.backside>.pic>figure>img:nth-child(){ grid-area: 5 / 1 / 7 / 4; }
+.backside>.pic>figure>img:nth-child() { grid-area: 5 / 5 / 7 / 7; }
+.backside>.pic>figure>img:nth-child() { grid-area: 5 / 8 / 7 / 11; }
+
+transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(0deg) translateZ(0px);

@@ -72,6 +72,7 @@ body{
     background-image: url(assets/marbleWallpaper.png);
     background-repeat: no-repeat;
     background-size: auto;
+    transform-style: preserve-3d;
 }
 
 .backside{
@@ -110,7 +111,7 @@ body{
 }
 
 .pic{
-    transform: rotateY(180deg) translateZ(300px);
+    transform: rotateY(180deg) translateZ(1px);
     /* border: red thick solid; */
     width: 100%;
     height: 100%;
@@ -121,21 +122,6 @@ body{
     position: relative;
 }
 
-.pic>label>figure{
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.438);
-}
-
-label{
-    border: red solid 10px;
-    z-index: 100;
-}
-
-.backside>.pic>label>figure>figure>img{
-    width: 390px;
-    position: absolute;
-    top: 20%;
-    z-index: -1;
-}
 
 .display{
     width: 100%;
@@ -201,7 +187,6 @@ label{
     color: white;
     visibility: hidden;
     opacity: 0;
-    transition: 0.4;
 }
 
 .name>p{
@@ -226,17 +211,22 @@ label{
 
 #defualtView:checked~.frame>.wrapper>.cube{
     transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(0deg) translateZ(0px);
-    transition: 1s cubic-bezier(.94,0,.62,1);
+    transition: 0.4s cubic-bezier(.94,0,.62,1);
 }
-
+/*--------------------------------------------------------------*/
 #defualtView:checked~.frame .start{
     opacity: 0;
     visibility: hidden;
-    opacity: 0;
 }
 
 #begginingView:checked~.frame>.wrapper>.cube{
     transform: translateX(-50%) translateY(-50%) translateZ(966px) scale(0.6) rotateX(-90deg) rotateY(90deg) translateZ(0px);
+}
+
+#defualtView:checked~.frame .credits1>p{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 3s;
 }
 
 #defualtView:checked~.frame .credits1{
@@ -244,21 +234,12 @@ label{
     visibility: hidden;
     transition: opacity 1s 6s;
 }
-#defualtView:checked~.frame .credits1>p{
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 1s 3s;
-}
-#defualtView:checked~.frame .name{
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s 15s;
-}
+
 #defualtView:checked~.frame .name>p{
     opacity: 1;
     visibility: visible;
     transition-duration: 1s;
-    transition-delay: 10s;  
+    transition-delay: 10s; 
 }
 
 #defualtView:checked~.frame .name>p::after{
@@ -266,7 +247,294 @@ label{
     transition: width 2s 10.5s;
 }
 
-#monoFocus:checked~.frame .backside>.pic>label{
-    transform: translateZ(300px);
+#defualtView:checked~.frame .name{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s 15s;
+    /* transition: visibility 0s 20s; */
 }
+
+#defualtView:checked~.frame>.display{
+    width: 0px;
+    transition: width 0s 16s;
+
+}
+
+#begginingView:checked~.frame>.navButtons{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.lookup{
+    visibility: hidden;
+    opacity: 0;
+}
+
+#bR:checked~.frame>.navButtons>.lookup,
+#bL:checked~.frame>.navButtons>.lookup,
+#rR:checked~.frame>.navButtons>.lookup,
+#rL:checked~.frame>.navButtons>.lookup,
+#fR:checked~.frame>.navButtons>.lookup,
+#fL:checked~.frame>.navButtons>.lookup,
+#lR:checked~.frame>.navButtons>.lookup,
+#lL:checked~.frame>.navButtons>.lookup{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.4;
+}
+
+#bR:checked~.frame>.display,
+#bL:checked~.frame>.display,
+#rR:checked~.frame>.display,
+#rL:checked~.frame>.display,
+#fR:checked~.frame>.display,
+#fL:checked~.frame>.display,
+#lR:checked~.frame>.display,
+#lL:checked~.frame>.display{
+    visibility: hidden;
+    opacity: 0;
+    width: 0px;
+}
+
+#bR:checked~.frame>.wrapper>.cube,
+#bL:checked~.frame>.wrapper>.cube,
+#rR:checked~.frame>.wrapper>.cube,
+#rL:checked~.frame>.wrapper>.cube,
+#fR:checked~.frame>.wrapper>.cube,
+#fL:checked~.frame>.wrapper>.cube,
+#lR:checked~.frame>.wrapper>.cube,
+#lL:checked~.frame>.wrapper>.cube{
+    transition: 3s;
+}
+
+#bR:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(90deg) translateZ(0px);
+}
+
+#bR:checked~.frame>.navButtons>label:nth-child(7),
+#bR:checked~.frame>.navButtons>label:nth-child(8){
+    opacity: 0;
+    visibility: 0;
+    width: 0%;
+}
+#bL:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(-90deg) translateZ(0px);
+}
+
+#bL:checked~.frame>.navButtons>label:nth-child(8),
+#bL:checked~.frame>.navButtons>label:nth-child(7),
+#bL:checked~.frame>.navButtons>label:nth-child(6),
+#bL:checked~.frame>.navButtons>label:nth-child(5),
+#bL:checked~.frame>.navButtons>label:nth-child(4),
+#bL:checked~.frame>.navButtons>label:nth-child(3){
+    opacity: 0;
+    visibility: 0;
+    width: 0%;
+}
+
+#rR:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(180deg) translateZ(0px);
+}
+
+#rR:checked~.frame>.navButtons>label:nth-child(8),
+#rR:checked~.frame>.navButtons>label:nth-child(7),
+#rR:checked~.frame>.navButtons>label:nth-child(6),
+#rR:checked~.frame>.navButtons>label:nth-child(5){
+    opacity: 0;
+    visibility: 0;
+    width: 0%;
+}
+#lR:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(0deg) translateZ(0px);
+}
+
+#lR:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(0deg) translateZ(0px);
+}
+
+#lL:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(-180deg) translateZ(0px);
+}
+
+#lL:checked~.frame>.navButtons>label:nth-child(5),
+#lL:checked~.frame>.navButtons>label:nth-child(6),
+#lL:checked~.frame>.navButtons>label:nth-child(7),
+#lL:checked~.frame>.navButtons>label:nth-child(8){
+    opacity: 0;
+    visibility: 0;
+    width: 0%;
+}
+
+#fR:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(+270deg) translateZ(0px);
+}
+
+#fR:checked~.frame>.navButtons>label:nth-child(3),
+#fR:checked~.frame>.navButtons>label:nth-child(4),
+#fR:checked~.frame>.navButtons>label:nth-child(5),
+#fR:checked~.frame>.navButtons>label:nth-child(6),
+#fR:checked~.frame>.navButtons>label:nth-child(7),
+#fR:checked~.frame>.navButtons>label:nth-child(8){
+    opacity: 0;
+    visibility: 0;
+    width: 0%;
+}
+
+#fL:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(800px) scale(0.6) rotateX(0deg) rotateY(-270deg) translateZ(0px);
+}
+
+#fL:checked~.frame>.navButtons>label:nth-child(7),
+#fL:checked~.frame>.navButtons>label:nth-child(8){
+    opacity: 0;
+    visibility: 0;
+    width: 0%;
+}
+
+
+
+
+#defualtView:checked~.frame>.navButtons{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.6s 0.4s;
+}
+
+/* nav buttons */
+
+.navButtons{
+    width: 500px;
+    height: 80px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 300;
+    /* background: #000; */
+}
+
+.rightB,.leftB{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: solid 1px rgba(0, 0, 0, 0);
+    font-size: 20px;
+    transition: 00.4s;
+    /* transform: translateY(-50%); */
+    /* background: #000; */
+}
+
+.rightB:hover,.leftB:hover,.lookup:hover{
+    border: solid 1px rgb(0, 0, 0);
+}
+
+.rightB:active,.leftB:active,.lookup:active{
+    border: solid 1px rgb(255, 255, 255);
+    background: rgb(88, 88, 88);
+    color: white;
+
+}
+.rightB{
+    right: 0;
+}
+
+.leftB{
+    left: 0;
+}
+
+.lookup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: solid 1px rgba(0, 0, 0, 0);
+    font-size: 20px;
+    transition: 00.4s;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+#credits2:checked~.frame>.wrapper>.cube{
+    transform: translateX(-50%) translateY(-50%) translateZ(966px) scale(0.6) rotateX(90deg) rotateY(180deg) translateZ(0px);
+    transition: 5s;
+}
+
+
+
+
+.pic>figure {
+    position: absolute;
+    top: -30px; left: -35px;
+    width: 100%;
+    height: 100%;
+    /* background: #000; */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 13px;
+    padding: 30px;
+}
+
+img{
+    width: auto;
+    height: auto;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.445);
+    transition: 0.5s;
+}
+
+img:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.445);
+}
+
+
+.backside>.pic>figure>img:nth-child(1) { grid-area: 1 / 1 / 4 / 6; 
+width: 700px;
+}
+.backside>.pic>figure>img:nth-child(2) { grid-area: 1 / 7 / 5 / 9; 
+width: 250px;
+}
+.backside>.pic>figure>img:nth-child(3) { grid-area: 1 / 9 / 5 / 11; 
+width: 250px; transform: translateX(-30px);
+}
+.backside>.pic>figure>img:nth-child(3):hover{
+    transform: translateX(-30px) scale(1.05);
+}
+
+.backside>.pic>figure>img:nth-child(4){ grid-area: 5 / 1 / 7 / 4; 
+transform: translate(80px,-60px);
+}
+.backside>.pic>figure>img:nth-child(4):hover{
+    transform: translate(80px,-60px) scale(1.05);
+}
+
+.backside>.pic>figure>img:nth-child(5) { grid-area: 5 / 5 / 7 / 7; 
+width: 300px; transform: translateY(-60px);
+}
+.backside>.pic>figure>img:nth-child(5):hover{
+    transform: translateY(-60px) scale(1.05);
+}
+
+.backside>.pic>figure>img:nth-child(6) { grid-area: 5 / 8 / 7 / 11; 
+    transform: translate(-80px,-80px);
+}
+.backside>.pic>figure>img:nth-child(6):hover{
+    transform: translate(-80px,-80px) scale(1.05);
+}
+.backside>.pic>figure>img:nth-child(7) { grid-area: 1 / 6 / 4 / 7;  
+margin-left: -30px; width: 180px;
+}
+
+
+
 
